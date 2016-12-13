@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './OppList.css';
 import OppItem from '../OppItem/OppItem.jsx';
 
 // const dummy = {
@@ -24,7 +25,7 @@ const OppList = props => {
   // console.log(oppsComponents)
   return (
     <div className="oppList">
-      <h1>List of Opportunities</h1>
+      <h1>Volunteer Feed</h1>
       {oppsComponents || 'not working.'}
     </div>
   );

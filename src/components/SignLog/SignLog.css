@@ -1,28 +1,47 @@
 .wrapper {
+  margin-top: 40px;
   position: relative;
   min-height: 250px;
   text-align: center;
+  width: 100%;
+}
+
+#input {
+  width: 200px;
+  height: 30px;
+  font-size: 15px;
 }
 
 .surround div div {
-  background: white;
+  background: rgba(255, 255, 255, 0.4);
   padding: 20px;
   min-height: 250px;
   position: absolute;
   top: -1px;
   left: 0;
   width: 100%;
+  text-align: center;
+  margin-top: 40px;
 }
 
-.surround div div,
-.ul li a {
-  border: 3px solid #ccc;
+#button {
+  width: 100px;
+  background-color: #D64439;
+  margin-top: 40px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  box-shadow: 2px 9px 48px 5px rgba(0, 0, 0, 0.75);
 }
+#button:hover{
+box-shadow: 1px 4.5px 24px 2.5px rgba(0, 0, 0, 0.75);
 
+}
 #w1:target,
-#w2:target{
+#w2:target {
   z-index: 1;
 }
+
 .ul {
   list-style: none;
 }
@@ -39,16 +58,20 @@
   margin-left: -1px;
   position: relative;
   left: 1px;
-  background: white;
   text-decoration: none;
+  background-color: #D64439;
+  border: none;
+  margin: 3px;
 }
 
 .ul li a:hover {
   background: #ccc;
 }
-.group{
+
+.group {
   text-align: center;
 }
+
 .group:after {
   visibility: hidden;
   display: block;

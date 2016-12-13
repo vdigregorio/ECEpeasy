@@ -13,12 +13,12 @@ export default class Profile extends Component {
 render() {
     return(
       <div>
-      <header>
-     <h1> ECEpeasy </h1>
+      <div id="header">
+     ECEpeasy
       <Logout
       logout={this.logout.bind(this)}
       />
-      </header>
+      </div>
       <h1>  Welcome username</h1>
       <div id="created">
       CREATED OPPS

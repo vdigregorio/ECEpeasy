@@ -3,6 +3,8 @@ import Logout from '../Logout/Logout.jsx';
 import OppForm from '../OppForm/OppForm.jsx';
 import OppList from '../OppList/OppList.jsx';
 import AjaxAdapter from '../../helpers/AjaxAdapter';
+import Socket from '../Socket/Socket.jsx';
+import './Dashboard.css';
 export default class Dashboard extends Component {
 constructor(props) {
     super();
@@ -50,14 +52,23 @@ constructor(props) {
   render() {
     return(
       <div>
-      <header>
-     <h1> ECEpeasy </h1>
+      <div id="header">
+     ECEpeasy
+     <div id="logout">
       <Logout
       logout={this.logout.bind(this)}
       />
-      </header>
-      <input type="search"></input>
-      <button type="submit">Search</button>
+      <form action="/profile">
+      <button id="profile">
+      Profile
+      </button>
+      </form>
+      </div>
+      </div>
+      <div id="search-container">
+      <input id="searchOpps" type="search"></input>
+      <button id="searchbut" type="submit">Search</button>
+      </div>
       <OppForm
       addOpp={this.addOpp.bind(this)}
       />
@@ -65,6 +76,20 @@ constructor(props) {
       <OppList
             opps={this.state.opps}
             />
+      </div>
+      <div className="socket-container">
+          <Socket />
+        </div>
+      <div id="footer">
+        <div
+            id="open-chat"
+            onClick={() => {
+                      document.querySelector('.message-popup').style.display='block';
+                    }}
+          >
+
+          </div>
+          copyright &#169; 2016
       </div>
       </div>
     )

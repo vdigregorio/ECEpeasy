@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SignLog from '../SignLog/SignLog.jsx';
+import {browserHistory} from 'react-router';
 import './App.css';
 export default class App extends Component {
   constructor() {
@@ -58,7 +59,7 @@ export default class App extends Component {
           password: ''
         }
       })
-    })
+    }).then(()=> browserHistory.push('/dashboard'))
   }
   postLogin() {
     console.log('clicked')
@@ -83,18 +84,19 @@ export default class App extends Component {
       }, () => {
         console.log(this.state)
       })
-    })
+    }).then(()=> browserHistory.push('/dashboard'))
   }
 
 
   render() {
     return(
-      <div>
+      <div id="bg">
       <div id="header">
       ECEpeasy
       </div>
+
       <div id="quote">
-      Your Chance To Help Other Is Here!
+      Your Chance To Help Others Is Here!
       </div>
         <SignLog
           trackSignupForm={this.trackSignupForm.bind(this)}
@@ -102,7 +104,9 @@ export default class App extends Component {
           trackLoginForm={this.trackLoginForm.bind(this)}
           postLogin={this.postLogin.bind(this)}
         />
+
         <div id="footer">
+
         copyright 2016
         </div>
       </div>

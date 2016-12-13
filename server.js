@@ -12,6 +12,25 @@ const bcrypt      = require('bcryptjs');
 const app     = express();
 const PORT    = process.argv[2] || process.env.port || 3000;
 
+// socket.io //smna15(sam) helped with socket.io
+const http       = require('http').Server(app);
+const io         = require('socket.io')(http);
+
+io.on('connection', socket => {
+  console.log('a user connected');
+  // receive msg from client through socket 'server-chat'
+  socket.on('server-chat', msg => {
+    console.log('chat: ' + msg);
+    // broadcast msg received to all who are listening to socket 'chatroom'
+    socket.broadcast.emit('chatroom', {msg : msg});
+  });
+
+  socket.on('disconnect', () => console.log('user disconnected'));
+});
+
+http.listen(PORT, () => console.log('listening on', PORT));
+
+
 app.use(logger('dev'));
 
 app.use(bodyParser.json());
@@ -32,4 +51,4 @@ app.use(history());
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(expressJWT({secret: process.env.SECRET}).unless({path: ['/favicon.ico', '/user/login', '/user/signup', '/dashboard', '/profile']}));
 
-app.listen(PORT, () => console.log('server is up and running on port', PORT));
+// app.listen(PORT, () => console.log('server is up and running on port', PORT));

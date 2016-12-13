@@ -1,0 +1,95 @@
+/*thank you to sam for helping configure the html with tags!*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.message-popup {
+  font: 13px Helvetica, Arial;
+  background-color: maroon;
+  position: absolute;
+  right: 1vw;
+  bottom: 0;
+  z-index: 50;
+  display: none;
+  /*float: right;*/
+  position: fixed;
+  bottom: 4vh;
+  width: 25vw;
+  height: 48vh;
+  border-radius: 3px;
+}
+
+.message-header {
+  text-align: right;
+  padding-right: 1.2vw;
+  background-color: maroon;
+  color: black;
+  font-size: 1vw;
+  font-weight: bold;
+  height: 3vh;
+  width: 25vw;
+}
+
+.message-header:hover {
+  cursor: pointer;
+}
+
+.socket-form {
+  position: absolute;
+  bottom: 0;
+  background: maroon;
+  padding: 3px;
+  width: 25vw;
+}
+
+.socket-form input {
+  border: 0;
+  padding: 10px;
+  width: 19.5vw;
+  height: 5vh;
+  margin-right: .5%;
+}
+
+#chatbut{
+  background-color: white;
+  width: 45px;
+  padding: 5px;
+  margin-left: 5px;
+  border-radius: 4px;
+  border: none;
+}
+/*.socket-form button {
+  width: 4.8vw;
+  background-color: #206FF9;
+  border: none;
+  padding: 10px;
+}*/
+
+.screen {
+  background-color: #FFFFFF;
+  width: 25vw;
+  height: 40vh;
+}
+
+
+#messages {
+  width: 25vw;
+  height: 39vh;
+  overflow: auto;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-right: solid 1px #D64439;
+  border-left: solid 1px #D64439;
+}
+
+#messages li {
+  padding: 5px 10px;
+  background: #FFFFFF;
+}
+
+#messages li:nth-child(odd) {
+  background: #eee;
+}
