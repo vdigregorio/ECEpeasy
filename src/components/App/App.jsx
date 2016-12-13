@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SignLog from '../SignLog/SignLog.jsx';
+import './App.css';
 export default class App extends Component {
   constructor() {
     super();
@@ -24,8 +25,8 @@ export default class App extends Component {
         password: fieldsArr[1].value
       }
     }, () => {
-      console.log(this.state)
-    })
+        console.log(this.state)
+     })
   }
   trackLoginForm(e) {
     let fieldsArr = e.target.parentElement.childNodes
@@ -35,7 +36,7 @@ export default class App extends Component {
         password: fieldsArr[1].value
       }
     }, () => {
-      console.log(this.state)
+      // console.log(this.state)
     })
   }
   postSignup() {
@@ -93,7 +94,7 @@ export default class App extends Component {
       ECEpeasy
       </div>
       <div id="quote">
-      quote
+      Your Chance To Help Other Is Here!
       </div>
         <SignLog
           trackSignupForm={this.trackSignupForm.bind(this)}

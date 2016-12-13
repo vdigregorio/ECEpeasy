@@ -1,34 +1,33 @@
 import React, { Component } from 'react';
-import{OppItem} from '../OppItem/OppItem.jsx';
+import OppItem from '../OppItem/OppItem.jsx';
 
+// const dummy = {
+//   fist: {
+//     title: 'test',
+//     description: 'test',
+//     location: 'test',
+//     opp_date: ''
+//   }
+// }
+const OppList = props => {
+  console.log('**&*********', props.opps)
 
-export default class Opplist extends Component{
-  // componentWillMount(){
-  //   this.props.getAllOpps();
-  // }
-render(){
-  const generateOpps = opps =>
-  Object.keys(opps)
-    .map((OppID, i) => (
+  const oppsComponents = props.opps.map((opp, i) =>
       <OppItem
         key={i}
-        title={opps[OppID].title}
-        description={opps[OppID].description}
-        location={opps[OppID].location}
-        date={opps[OppID].opp_date}
+        title={opp.title}
+        description={opp.description}
+        location={opp.location}
+        date={opp.opp_date}
       />
-    ));
-
-
-
-  return(
-
-
- <div className="oppList">
-    <h1>List of Opportunities</h1>
-    {generateOpps(this.props.opps)}
-  </div>
-
-)
+    );
+  // console.log(oppsComponents)
+  return (
+    <div className="oppList">
+      <h1>List of Opportunities</h1>
+      {oppsComponents || 'not working.'}
+    </div>
+  );
 }
-}
+
+export default OppList;

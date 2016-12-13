@@ -8,7 +8,7 @@ constructor(props) {
     super();
 
     this.state = {
-      opps: {},
+      opps: []
     };
 
     // this.addEvent = this.addEvent.bind(this);
@@ -25,6 +25,7 @@ constructor(props) {
   componentDidMount() {
     AjaxAdapter.getAllOpps()
       .then((allOpps) => {
+        // console.log(allOpps)
         this.setState({ opps: allOpps });
       }
     )
@@ -62,8 +63,8 @@ constructor(props) {
       />
       <div id="results">
       <OppList
-      opps={this.state.opps}
-      />
+            opps={this.state.opps}
+            />
       </div>
       </div>
     )

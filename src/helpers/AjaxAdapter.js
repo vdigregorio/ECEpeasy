@@ -1,17 +1,11 @@
-function indexByKeyName(arr, keyName) {
-  return arr.reduce((obj, el) => {
-    obj[el[keyName]] = el;
-    return obj;
-  }, {});
-}
 
 export default class AjaxAdapter{
   static getAllOpps() {
     return fetch('/api/opps')
     .then((r) => {
       return r.json();
-    })
-    .then(data => indexByKeyName(data, 'id'));
+    });
+    // .then(data => indexByKeyName(data, 'id'));
   }
 
   static getOppsForUser(user) {
@@ -19,17 +13,17 @@ export default class AjaxAdapter{
     .then((r) => {
       return r.json();
     })
-    .then(data => indexByKeyName(data, 'id'));
+    // .then(data => indexByKeyName(data, 'id'));
   }
 
   static addOpp(newOpp) {
-    // console.log('newevent..', newEvent);
+    console.log('newOpp..', newOpp);
     return fetch('/api/opps', {
       method:  'POST',
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
-      body: JSON.stringify(newOpp)
+      body: newOpp
     })
       .then(r => r.json());
   }

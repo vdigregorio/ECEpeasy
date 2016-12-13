@@ -8,7 +8,7 @@ export default function OppForm(props) {
     // stop the event from leaving the form
     event.preventDefault();
     const myForm = event.target;
-    // console.log('myForm is..', myForm);
+    console.log('myForm is..', myForm);
     props.addOpp(
       myForm.oppTitle.value,
       myForm.oppDescription.value,

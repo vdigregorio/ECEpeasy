@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import Logout from '../Logout/Logout.jsx';
-export default class Profile extends Component {
 
-    logout() {
+
+export default class Profile extends Component {
+  logout() {
     this.setState({
       currentToken: '',
     }, () => {
       console.log('after logout ', this.state)
     })
   }
-  render() {
+render() {
     return(
       <div>
       <header>
@@ -18,16 +19,16 @@ export default class Profile extends Component {
       logout={this.logout.bind(this)}
       />
       </header>
-
-      <div id="welcome">
-      WELCOME --USERNAME HERE--
-      </div>
-      <div id="personal">
-      YOUR CREATED VOLUNTEER OPPORTUNITIES
+      <h1>  Welcome username</h1>
+      <div id="created">
+      CREATED OPPS
       </div>
       <div id="joined">
-      OPPORTUNITIES JOINED
+      JOINED OPPS
       </div>
+      <div id="footer">
+        copyright 2016
+        </div>
       </div>
     )
   }
