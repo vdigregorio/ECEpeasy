@@ -3,17 +3,16 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-height: 80%;
-overflow-y: scroll;
-
-
+  height: 80%;
+  overflow-y: scroll;
 }
-h5{
+
+h5 {
   font-size: 15px;
   color: white;
   margin-bottom: -20px;
-
 }
+
 .oppItem {
   width: 500px;
   height: 150px;
@@ -35,6 +34,7 @@ p {
   text-align: left;
   font-size: 17px;
 }
-#formz{
+
+#formz {
   margin-top: -10px;
 }

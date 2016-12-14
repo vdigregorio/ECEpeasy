@@ -16,7 +16,7 @@ render() {
       const usernameizzle = localStorage.getItem('userName');
 
     return(
-      <div>
+      <div id="bg1">
       <div id="header">
      ECEpeasy
      <div id="logout">
@@ -34,7 +34,7 @@ render() {
       <h1>  Welcome {usernameizzle}!</h1>
       <div id="contained">
       <div id="created">
-      CREATED OPPS
+      Opportunities Created
       </div>
       <div id="gameco">
       <div id="game"
@@ -48,7 +48,7 @@ document.querySelector('#iframe').style.display='block';
       </iframe>
       </div>
       <div id="joined">
-      JOINED OPPS
+      Opportunities Joined
       </div>
       </div>
       <div className="socket-container">

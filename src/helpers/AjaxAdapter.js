@@ -5,15 +5,19 @@ export default class AjaxAdapter{
     .then((r) => {
       return r.json();
     });
-    // .then(data => indexByKeyName(data, 'id'));
   }
 
+static getCertainOpps() {
+    return fetch('/api/opps')
+    .then((r) => {
+      return r.json();
+    });
+  }
   static getOppsForUser(user) {
     return fetch(`/api/${user}`)
     .then((r) => {
       return r.json();
     })
-    // .then(data => indexByKeyName(data, 'id'));
   }
 
   static addOpp(newOpp) {

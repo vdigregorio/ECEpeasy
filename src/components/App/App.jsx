@@ -19,7 +19,6 @@ export default class App extends Component {
   }
   trackSignupForm(e) {
     let fieldsArr = e.target.parentElement.childNodes
-    //skylar pls remember to consolelog fieldsArr
     this.setState({
       signupForm: {
         username: fieldsArr[0].value,
@@ -41,6 +40,7 @@ export default class App extends Component {
     })
   }
   postSignup() {
+    localStorage.setItem('userName', this.state.signupForm.username)
     console.log('clicked')
     fetch('/user/signup', {
       method: 'POST',

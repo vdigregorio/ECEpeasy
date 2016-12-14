@@ -34,10 +34,11 @@
   color: white;
   box-shadow: 2px 9px 48px 5px rgba(0, 0, 0, 0.75);
 }
-#button:hover{
-box-shadow: 1px 4.5px 24px 2.5px rgba(0, 0, 0, 0.75);
 
+#button:hover {
+  box-shadow: 1px 4.5px 24px 2.5px rgba(0, 0, 0, 0.75);
 }
+
 #w1:target,
 #w2:target {
   z-index: 1;

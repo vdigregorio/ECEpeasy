@@ -60,10 +60,18 @@ constructor(props) {
   }
 
 
+
+// javascript dom manipulation
+
+// new_opp_list(){
+//   document.querySelector('')
+// }
+    // const new_opp = {this.state.opps}.filter()
+
   render() {
     const usernameizzle = localStorage.getItem('userName');
     return(
-      <div>
+      <div id="bg2">
       <div id="header">
      ECEpeasy
      <div id="logout">

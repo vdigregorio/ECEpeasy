@@ -36,8 +36,12 @@ export default class Socket extends Component {
   }
 
   render() {
+   const usernameizzle = localStorage.getItem('userName');
+
     return(
       <div className='message-popup'>
+        {usernameizzle}
+
         <div
         className="message-header"
         onClick={()=>{document.querySelector('.message-popup').style.display = "none"}}
@@ -48,7 +52,9 @@ export default class Socket extends Component {
         </div>
         <div className='socket-form'>
           <form onSubmit={event => this.handleSubmit(event)}>
+
             <input id="m" onChange={event => this.handleInputChange(event)}/>
+
             <button id="chatbut">Send</button>
           </form>
         </div>

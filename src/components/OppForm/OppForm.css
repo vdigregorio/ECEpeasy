@@ -1,27 +1,37 @@
-#formcreate{
+#formcreate {
   display: none;
 }
-.inputt{
-display: inline-block;
-width: 350px;
-text-align: center;
+
+.inputt {
+  display: inline-block;
+  width: 350px;
+  text-align: center;
 }
-.input0, .input1, .input2, .input3, .input4{
+
+.input0,
+.input1,
+.input2,
+.input3,
+.input4 {
   width: 300px;
   height: 45px;
 }
+
+
 /*#logs{
   width: 0;
   height: 20;
 }*/
-#centering{
+
+#centering {
   text-align: center;
   width: 100%;
 }
-#rotate{
+
+#rotate {
   transition: transform 1s ease-in-out;
 }
-#rotate:hover{
+
+#rotate:hover {
   transform: rotate(360deg);
 }
-
