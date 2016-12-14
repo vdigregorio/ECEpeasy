@@ -2,9 +2,13 @@
   "name": "ecepeasy",
   "version": "1.0.0",
   "main": "server.js",
+  "engines": {
+    "node": "6.6.0"
+  },
   "private": true,
   "scripts": {
     "clean": "rm -rf dist && rm -rf node_modules",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-prebuild": "scripts/deployment_react.sh",
     "heroku-postbuild": "scripts/deployment_cleanup.sh",
     "start": "node server.js",
