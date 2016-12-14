@@ -1,3 +1,6 @@
+*{
+  font-family: monospace;
+}
 #header {
   font-size: 45px;
   width: 100%;
@@ -17,7 +20,7 @@
   text-align: center;
   width: 400px;
   height: 500px;
-  background: rgba(214, 68, 57, 0.4);
+  background: rgba(214, 68, 57, 0.69);
   font-size: 30px;
   text-decoration: underline;
 }
@@ -26,7 +29,7 @@
   text-align: center;
   width: 400px;
   height: 500px;
-  background: rgba(214, 68, 57, 0.4);
+  background: rgba(214, 68, 57, 0.69);
   font-size: 30px;
   text-decoration: underline;
   font-family: monospace;
