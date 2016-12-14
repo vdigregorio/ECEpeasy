@@ -8,7 +8,12 @@ overflow-y: scroll;
 
 
 }
+h5{
+  font-size: 15px;
+  color: white;
+  margin-bottom: -20px;
 
+}
 .oppItem {
   width: 500px;
   height: 150px;
@@ -29,4 +34,7 @@ h3 {
 p {
   text-align: left;
   font-size: 17px;
+}
+#formz{
+  margin-top: -10px;
 }

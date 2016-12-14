@@ -46,6 +46,7 @@ export default class App extends Component {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
+        'Authorization': `Bearer ${this.state.currentToken}`
       },
       body: JSON.stringify({
         username: this.state.signupForm.username,
@@ -62,11 +63,13 @@ export default class App extends Component {
     }).then(()=> browserHistory.push('/dashboard'))
   }
   postLogin() {
+    localStorage.setItem('userName', this.state.loginForm.username)
     console.log('clicked')
     fetch('/user/login', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
+        'Authorization': `Bearer ${this.state.currentToken}`
       },
       body: JSON.stringify({
         username: this.state.loginForm.username,
@@ -87,7 +90,17 @@ export default class App extends Component {
       })
     }).then(()=> browserHistory.push('/dashboard'))
   }
-
+logout() {
+    this.setState({
+      currentToken: '',
+    }, () => {
+      console.log('after logout ', this.state)
+    });
+    localStorage.removeItem('userName');
+    localStorage.removeItem('userName');
+    browserHistory.push('/')
+    console.log('logged out')
+  }
 
   render() {
     return(

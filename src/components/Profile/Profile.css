@@ -1,49 +1,80 @@
-#header{
+#header {
   font-size: 45px;
   width: 100%;
-  height: 70px;
+  height: 90px;
   background-color: #D64439;
   color: white;
   box-shadow: 2px 9px 48px 5px rgba(0, 0, 0, 0.75);
 }
-#created{
-
-  width: 400px;
-  height: 500px;
-  background: rgba(214, 68, 57, 0.4);
-
-}
-#joined{
-
+/*#logs{
+  margin-bottom: -25px;
+}*/
+#created {
   width: 400px;
   height: 500px;
   background: rgba(214, 68, 57, 0.4);
 }
-#game{
-background-image: url('https://cdn1.iconfinder.com/data/icons/mirrored-twins-icon-set-hollow/512/PixelKit_playstation_icon.png');
-background-size: cover;
-width: 100px;
-height: 100px;
-margin-left: 90px;
-margin-right: 90px;
-margin-top: -20px;
+
+#joined {
+  width: 400px;
+  height: 500px;
+  background: rgba(214, 68, 57, 0.4);
 }
-#iframe{
+
+#game {
+  background-image: url('https://cdn1.iconfinder.com/data/icons/mirrored-twins-icon-set-hollow/512/PixelKit_playstation_icon.png');
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  margin-left: 90px;
+  margin-right: 90px;
+  margin-top: -20px;
+}
+
+#iframe {
   display: none;
   width: 290px;
-  height: 400px;
+  height: 418px;
 }
-#gameco{
+
+#gameco {
   display: inline-block;
   margin: 30px;
 }
-#game:hover{
+
+#game:hover {
   background-color: gray;
   border-radius: 7px;
 }
-#contained{
-display: flex;
+
+#contained {
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
 }
+
+#buttz {
+  border: none;
+  border-radius: 5px;
+  width: 70px;
+  height: 20px;
+  font-size: 13px;
+}
+
+#buttz2 {
+  border: none;
+  border-radius: 5px;
+  width: 70px;
+  height: 25px;
+  font-size: 13px;
+}
+
+#buttz3 {
+  border: none;
+  border-radius: 5px;
+  width: 70px;
+  height: 25px;
+  font-size: 13px;
+}
+

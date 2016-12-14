@@ -10,6 +10,10 @@ text-align: center;
   width: 300px;
   height: 45px;
 }
+/*#logs{
+  width: 0;
+  height: 20;
+}*/
 #centering{
   text-align: center;
   width: 100%;
@@ -20,3 +24,4 @@ text-align: center;
 #rotate:hover{
   transform: rotate(360deg);
 }
+

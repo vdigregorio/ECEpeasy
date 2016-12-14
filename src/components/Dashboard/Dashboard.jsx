@@ -4,7 +4,10 @@ import OppForm from '../OppForm/OppForm.jsx';
 import OppList from '../OppList/OppList.jsx';
 import AjaxAdapter from '../../helpers/AjaxAdapter';
 import Socket from '../Socket/Socket.jsx';
+import {browserHistory} from 'react-router';
+
 import './Dashboard.css';
+//anything browserhistory/localstorage related originated from imani! she helped me with this!
 export default class Dashboard extends Component {
 constructor(props) {
     super();
@@ -13,7 +16,6 @@ constructor(props) {
       opps: [],
     };
 
-    // this.addEvent = this.addEvent.bind(this);
   }
 
     logout() {
@@ -21,9 +23,12 @@ constructor(props) {
       currentToken: '',
     }, () => {
       console.log('after logout ', this.state)
-    })
+    });
+    localStorage.removeItem('userName');
+    localStorage.removeItem('userName');
+    browserHistory.push('/')
+    console.log('logged out')
   }
-  // executed once the ProfilePage component mounts
   componentDidMount() {
     AjaxAdapter.getAllOpps()
       .then((allOpps) => {
@@ -44,7 +49,7 @@ constructor(props) {
  addOpp(cause, title, description, location, date) {
     AjaxAdapter.addOpp({ cause, title, description, location, date })
     .then((newOpp) => {
-      // clone existing state
+      // clones the existing state
       const newState = { ...this.state.opps };
       newState[newOpp.id] = newOpp;
       this.setState({ opps: newState });
@@ -53,23 +58,21 @@ constructor(props) {
       throw error;
     });
   }
-  test(){
-    console.log('test', localStorage.getItem('token'))
-    return localStorage.getItem('token')
-  }
+
 
   render() {
+    const usernameizzle = localStorage.getItem('userName');
     return(
       <div>
-      <button onClick={this.test}>test</button>
       <div id="header">
      ECEpeasy
      <div id="logout">
+     <h5>{usernameizzle}</h5>
       <Logout
       logout={this.logout.bind(this)}
       />
-      <form action="/profile">
-      <button id="profile">
+      <form id="formz" action="/profile">
+      <button id="buttz2">
       Profile
       </button>
       </form>
@@ -77,7 +80,7 @@ constructor(props) {
       </div>
       <div id="search-container">
       <select className="searching" name="oppCause" placeholder="Cause" >
-        <option selected="selected">Search By Cause</option>
+        <option defaultValue="selected">Search By Cause</option>
         <option value="Children/Youth">Children/Youth</option>
         <option value="Animals">Animals</option>
         <option value="Arts & Culture">Arts & Culture</option>

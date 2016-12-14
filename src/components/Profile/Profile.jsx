@@ -13,22 +13,25 @@ export default class Profile extends Component {
     })
   }
 render() {
+      const usernameizzle = localStorage.getItem('userName');
+
     return(
       <div>
       <div id="header">
      ECEpeasy
      <div id="logout">
+     <h5>{usernameizzle}</h5>
       <Logout
       logout={this.logout.bind(this)}
       />
-      <form action="/dashboard">
-      <button id="profile">
+      <form id="formz" action="/dashboard">
+      <button id="buttz3">
       Dashboard
       </button>
       </form>
       </div>
       </div>
-      <h1>  Welcome username</h1>
+      <h1>  Welcome {usernameizzle}!</h1>
       <div id="contained">
       <div id="created">
       CREATED OPPS
