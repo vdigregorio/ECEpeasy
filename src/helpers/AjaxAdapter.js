@@ -18,12 +18,12 @@ export default class AjaxAdapter{
 
   static addOpp(newOpp) {
     console.log('newOpp..', newOpp);
-    return fetch('/api/opps', {
+    return fetch(`/api/opps`, {
       method:  'POST',
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
-      body: newOpp
+       body: JSON.stringify(newOpp)
     })
       .then(r => r.json());
   }

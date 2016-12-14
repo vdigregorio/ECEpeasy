@@ -39,9 +39,9 @@ app.use(bodyParser.json());
 const userRouter = require('./routes/user.js');
 // const apiRouter = require('./routes/ap.js');
 app.use('/user', userRouter);
+app.use('/api/opps', require('./routes/opps'));
 
 // app.use('/campaign', require('./routes/volunteer.js'));
-app.use('/api/opps', require('./routes/opps'));
 
 const history = require('connect-history-api-fallback');
 app.use(history());
@@ -49,6 +49,6 @@ app.use(history());
 
 // app.use('/api', apiRouter);
 app.use(express.static(path.join(__dirname, 'dist')));
-app.use(expressJWT({secret: process.env.SECRET}).unless({path: ['/favicon.ico', '/user/login', '/user/signup', '/dashboard', '/profile']}));
+app.use(expressJWT({secret: process.env.SECRET}).unless({path: ['/favicon.ico', '/user/login', '/user/signup','/api/opps']}));
 
 // app.listen(PORT, () => console.log('server is up and running on port', PORT));

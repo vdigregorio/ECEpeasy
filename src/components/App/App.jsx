@@ -74,9 +74,10 @@ export default class App extends Component {
       })
     })
     .then(r => r.json())
-    .then((data) => {
+    .then((token) => {
+      localStorage.setItem('token', token)
       this.setState({
-        currentToken: data,
+        currentToken: token,
         loginForm: {
           username: '',
           password: ''

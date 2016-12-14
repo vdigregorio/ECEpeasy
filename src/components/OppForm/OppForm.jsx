@@ -11,6 +11,7 @@ export default function OppForm(props) {
     const myForm = event.target;
     console.log('myForm is..', myForm);
     props.addOpp(
+      myForm.oppCause.value,
       myForm.oppTitle.value,
       myForm.oppDescription.value,
       myForm.oppLocation.value,
@@ -24,14 +25,25 @@ export default function OppForm(props) {
 <div className="oppWrap">
   <div className="innerWrapper">
     <h1
-onClick={() => {
+id="rotate" onClick={() => {
                       document.querySelector('#formcreate').style.display='block';
                     }}
     >+</h1>
     <div id="centering">
     <form id="formcreate" onSubmit={handleSubmit}>
       <div className="inputt">
-        <input type="text" className="input1" name="oppTitle" placeholder="Volunteering Activity Name" />
+        <input type="text" className="input0" name="oppTitle" placeholder="Volunteering Activity Name" />
+        <select className="input1" name="oppCause" placeholder="Cause" >
+        <option selected="selected">Choose Your Cause</option>
+        <option value="Children/Youth">Children/Youth</option>
+        <option value="Animals">Animals</option>
+        <option value="Arts & Culture">Arts & Culture</option>
+        <option value="Community Development">Community Development</option>
+        <option value="Health/Hospitals">Health/Hospitals</option>
+        <option value="Mental Health">Mental Health</option>
+        <option value="Education & Literacy">Education & Literacy</option>
+        <option value="Homelessness">Homelessness</option>
+        </select>
         <input type="text" className="input2" name="oppDescription" placeholder="Volunteering Activity Description" />
         <input type="text" className="input3" name="oppLocation" placeholder="Add Location" />
         <input type="date" className="input4" name="oppDate" placeholder="Add Date" />

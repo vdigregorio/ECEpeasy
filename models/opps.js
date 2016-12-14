@@ -36,7 +36,7 @@ console.log('opps...', opps)
   addOpp(req, res, next) {
     console.log('===addOpp===',req.body);
     db.any(
-        `INSERT INTO volunteerOpp (name, description, location, date_created) VALUES ($/title/, $/desc/, $/location/, $/date/) returning *;`, req.body)
+        `INSERT INTO volunteerOpp ( title, cause, description, location, opp_date) VALUES ($/title/, $/cause/, $/description/, $/location/, $/date/) returning *;`, req.body)
       .then((opp) => {
         console.log('ADDED OPP SUCCESSFUL');
         res.rows = opp;

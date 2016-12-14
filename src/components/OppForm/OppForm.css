@@ -6,11 +6,17 @@ display: inline-block;
 width: 350px;
 text-align: center;
 }
-.input1, .input2, .input3, .input4{
+.input0, .input1, .input2, .input3, .input4{
   width: 300px;
   height: 45px;
 }
 #centering{
   text-align: center;
   width: 100%;
+}
+#rotate{
+  transition: transform 1s ease-in-out;
+}
+#rotate:hover{
+  transform: rotate(360deg);
 }

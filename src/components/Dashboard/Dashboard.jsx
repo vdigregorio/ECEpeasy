@@ -10,11 +10,12 @@ constructor(props) {
     super();
 
     this.state = {
-      opps: []
+      opps: [],
     };
 
     // this.addEvent = this.addEvent.bind(this);
   }
+
     logout() {
     this.setState({
       currentToken: '',
@@ -22,7 +23,6 @@ constructor(props) {
       console.log('after logout ', this.state)
     })
   }
-
   // executed once the ProfilePage component mounts
   componentDidMount() {
     AjaxAdapter.getAllOpps()
@@ -36,8 +36,13 @@ constructor(props) {
     });
   }
 
- addOpp(title, description, location, date) {
-    AjaxAdapter.addOpp({ title, description, location, date })
+
+
+
+
+
+ addOpp(cause, title, description, location, date) {
+    AjaxAdapter.addOpp({ cause, title, description, location, date })
     .then((newOpp) => {
       // clone existing state
       const newState = { ...this.state.opps };
@@ -48,10 +53,15 @@ constructor(props) {
       throw error;
     });
   }
+  test(){
+    console.log('test', localStorage.getItem('token'))
+    return localStorage.getItem('token')
+  }
 
   render() {
     return(
       <div>
+      <button onClick={this.test}>test</button>
       <div id="header">
      ECEpeasy
      <div id="logout">
@@ -66,21 +76,38 @@ constructor(props) {
       </div>
       </div>
       <div id="search-container">
-      <input id="searchOpps" type="search"></input>
+      <select className="searching" name="oppCause" placeholder="Cause" >
+        <option selected="selected">Search By Cause</option>
+        <option value="Children/Youth">Children/Youth</option>
+        <option value="Animals">Animals</option>
+        <option value="Arts & Culture">Arts & Culture</option>
+        <option value="Community Development">Community Development</option>
+        <option value="Health/Hospitals">Health/Hospitals</option>
+        <option value="Mental Health">Mental Health</option>
+        <option value="Education & Literacy">Education & Literacy</option>
+        <option value="Homelessness">Homelessness</option>
+        </select>
       <button id="searchbut" type="submit">Search</button>
       </div>
       <OppForm
       addOpp={this.addOpp.bind(this)}
       />
       <div id="results">
-      <OppList
+
+
+         <OppList
             opps={this.state.opps}
             />
+
+
       </div>
       <div className="socket-container">
           <Socket />
         </div>
-      <div id="footer">
+        <div className="push">
+        </div>
+      <div id="footer1">
+      <div id="footer-content">
         <div
             id="open-chat"
             onClick={() => {
@@ -90,6 +117,7 @@ constructor(props) {
 
           </div>
           copyright &#169; 2016
+          </div>
       </div>
       </div>
     )

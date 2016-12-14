@@ -16,6 +16,7 @@ const OppList = props => {
   const oppsComponents = props.opps.map((opp, i) =>
       <OppItem
         key={i}
+        cause={opp.cause}
         title={opp.title}
         description={opp.description}
         location={opp.location}

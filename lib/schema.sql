@@ -16,14 +16,16 @@ CREATE TABLE secretstuff(
  mySecret VARCHAR NOT NULL,
  myOtherSecret VARCHAR NOT NULL
 );
+
 CREATE TABLE volunteerOpp(
   id SERIAL PRIMARY KEY,
+  cause VARCHAR(30) NOT NULL,
   title VARCHAR(64) NOT NULL,
   description text NOT NULL,
   date_created TIMESTAMP NOT NULL DEFAULT NOW(),
-  opp_date TIMESTAMP,
+  opp_date DATE,
   location VARCHAR(64),
-  creator INTEGER REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE
+  creator TEXT REFERENCES users(username) ON UPDATE CASCADE ON DELETE CASCADE
   );
 
 CREATE TABLE attendence(
