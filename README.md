@@ -30,6 +30,7 @@ Is web app that allows users to search for volunteering options and create new o
 - The database wasn't storing which user created which post
   - this created a bigger problem because my plan was to render the posts of each specific user in their profile routes.
 - My original API got rejected by the website I requested the key from
+
 ###Special Thanks
 - Daniel Pease: USER AUTH
 - Sang Min Na: SOCKET.IO
