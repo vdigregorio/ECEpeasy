@@ -49,8 +49,8 @@ app.use(history());
 // using history api fallback library to access url paths directly
 
 // app.use('/api', apiRouter);
-app.use(cookieParser('valewale'));
+// app.use(cookieParser('valewale'));
 app.use(express.static(path.join(__dirname, 'dist')));
-app.use(expressJWT({secret: process.env.SECRET}).unless({path: ['/favicon.ico', '/user/login', '/user/signup','/api/opps']}));
+app.use(expressJWT({secret: 'valewale'}).unless({path: ['/favicon.ico', '/user/login', '/user/signup','/api/opps']}));
 
 // app.listen(PORT, () => console.log('server is up and running on port', PORT));
