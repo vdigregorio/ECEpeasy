@@ -49,7 +49,7 @@ app.use(history());
 // using history api fallback library to access url paths directly
 
 // app.use('/api', apiRouter);
-app.use(express.cookieParser('valewale'));
+app.use(cookieParser('valewale'));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(expressJWT({secret: process.env.SECRET}).unless({path: ['/favicon.ico', '/user/login', '/user/signup','/api/opps']}));
 
