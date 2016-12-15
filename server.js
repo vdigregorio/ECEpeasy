@@ -29,7 +29,7 @@ io.on('connection', socket => {
   socket.on('disconnect', () => console.log('user disconnected'));
 });
 
-http.listen(PORT, () => console.log('listening on', PORT));
+http.listen(process.env.PORT || 3000, () => console.log('listening on', PORT));
 
 
 app.use(logger('dev'));
@@ -51,6 +51,6 @@ app.use(history());
 // app.use('/api', apiRouter);
 // app.use(cookieParser('valewale'));
 app.use(express.static(path.join(__dirname, 'dist')));
-app.use(expressJWT({secret: 'valewale'}).unless({path: ['/favicon.ico', '/user/login', '/user/signup','/api/opps']}));
+app.use(expressJWT({secret: process.env.SECRET}).unless({path: ['/favicon.ico', '/user/login', '/user/signup','/api/opps']}));
 
 // app.listen(PORT, () => console.log('server is up and running on port', PORT));
