@@ -8,7 +8,7 @@ const fetch = require('node-fetch');
 const jwt         = require('jsonwebtoken');
 const expressJWT  = require('express-jwt');
 const bcrypt      = require('bcryptjs');
-const cookieParser = require('coookie-parser');
+const cookieParser = require('cookie-parser');
 
 const app     = express();
 const PORT    = process.argv[2] || process.env.port || 3000;
