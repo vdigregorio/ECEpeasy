@@ -8,6 +8,7 @@ const fetch = require('node-fetch');
 const jwt         = require('jsonwebtoken');
 const expressJWT  = require('express-jwt');
 const bcrypt      = require('bcryptjs');
+const cookieParser = require('coookie-parser');
 
 const app     = express();
 const PORT    = process.argv[2] || process.env.port || 3000;
@@ -48,6 +49,7 @@ app.use(history());
 // using history api fallback library to access url paths directly
 
 // app.use('/api', apiRouter);
+app.use(express.cookieParser('valewale'));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(expressJWT({secret: process.env.SECRET}).unless({path: ['/favicon.ico', '/user/login', '/user/signup','/api/opps']}));
 
