@@ -7,12 +7,6 @@ export default class AjaxAdapter{
     });
   }
 
-static getCertainOpps() {
-    return fetch('/api/opps')
-    .then((r) => {
-      return r.json();
-    });
-  }
   static getOppsForUser(user) {
     return fetch(`/api/${user}`)
     .then((r) => {
