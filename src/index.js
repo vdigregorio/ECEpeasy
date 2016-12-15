@@ -1,8 +1,8 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
-import App      from './Components/App/App.jsx';
-import Profile  from './Components/Profile/Profile.jsx';
-import Dashboard from './Components/Dashboard/Dashboard.jsx';
+import App      from './components/App/App.jsx';
+import Profile  from './components/Profile/Profile.jsx';
+import Dashboard from './components/Dashboard/Dashboard.jsx';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 
