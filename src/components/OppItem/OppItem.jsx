@@ -9,6 +9,7 @@ const OppItem = props => (
     <p>{props.description}</p>
     <p>Where: {props.location}</p>
     <p>When: {props.date}</p>
+    <p> who? {props.creator} </p>
   </div>
 );
 

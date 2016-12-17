@@ -1,7 +1,9 @@
 #formcreate {
   display: none;
 }
-
+.inputno{
+  display: none;
+}
 .inputt {
   display: inline-block;
   width: 350px;

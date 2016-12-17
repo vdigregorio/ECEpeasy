@@ -46,8 +46,8 @@ constructor(props) {
 
 
 
- addOpp(cause, title, description, location, date) {
-    AjaxAdapter.addOpp({ cause, title, description, location, date })
+ addOpp(title, creator, cause, description, location, date) {
+    AjaxAdapter.addOpp({ title, creator, cause, description, location, date })
     .then((newOpp) => {
       // clones the existing state
       const newState = { ...this.state.opps };

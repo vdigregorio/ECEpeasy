@@ -11,8 +11,10 @@ export default function OppForm(props) {
     const myForm = event.target;
     console.log('myForm is..', myForm);
     props.addOpp(
-      myForm.oppCause.value,
+
       myForm.oppTitle.value,
+      myForm.oppCreator.value,
+      myForm.oppCause.value,
       myForm.oppDescription.value,
       myForm.oppLocation.value,
       myForm.oppDate.value
@@ -20,7 +22,7 @@ export default function OppForm(props) {
     return false;
   };
 
-
+const usernameizzle = localStorage.getItem('userName');
     return(
 <div className="oppWrap">
   <div className="innerWrapper">
@@ -33,6 +35,7 @@ id="rotate" onClick={() => {
     <form id="formcreate" onSubmit={handleSubmit}>
       <div className="inputt">
         <input type="text" className="input0" name="oppTitle" placeholder="Volunteering Activity Name" />
+        <input type="text" className ="inputno" name="oppCreator" value={usernameizzle}/>
         <select className="input1" name="oppCause" placeholder="Cause" >
         <option selected="selected">Choose Your Cause</option>
         <option value="Children/Youth">Children/Youth</option>
