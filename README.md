@@ -35,4 +35,5 @@ Is web app that allows users to search for volunteering options and create new o
 - Daniel Pease: USER AUTH
 - Sang Min Na: SOCKET.IO
 
-
+####
+I decided to create this app with react routers, once I began to build my components, some of the things I ran into were issues with the JSON web token User Auth. I couldnt get the routes to render how they were supposed to, but once I got that to work the components were easier to build and render. The second set of problems I encountered was getting the database to store which user created each specific volunteering opportunity and finally ended up hardcoding it with localStorage. Overall the app is not yet where I imagined it would be but I plan to continue to work on it because of my personal interest in volunteering and following through.
